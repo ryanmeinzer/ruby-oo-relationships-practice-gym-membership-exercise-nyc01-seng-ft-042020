@@ -49,5 +49,9 @@ class Lifter
   end
 
 #   - Given a gym and a membership cost, sign a specific lifter up for a new gym
+  def sign_up(gym, cost)
+    Membership.new(cost, self, gym)
+  end
+
 
 end
