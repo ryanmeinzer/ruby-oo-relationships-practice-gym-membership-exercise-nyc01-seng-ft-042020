@@ -1,8 +1,53 @@
+require 'pry'
+
 class Lifter
   attr_reader :name, :lift_total
+
+  @@all = []
 
   def initialize(name, lift_total)
     @name = name
     @lift_total = lift_total
+    Lifter.all << self
   end
+
+#   - Get a list of all lifters
+  # @@all array with class method
+
+  def self.all
+    @@all
+  end
+
+#   - Get a list of all the memberships that a specific lifter has
+  # @all instance method through membership.rb as join method
+
+  def memberships
+    Membership.all.select { |membership| membership.lifter == self }
+  end
+
+#   - Get a list of all the gyms that a specific lifter has memberships to
+  # get gyms through membership.rb as join method
+
+  def gyms
+    memberships.map { |membership| membership.gym }
+    # Gym.all.select { |gym| gym.lifter == self }
+  end
+
+  binding.pry
+#   - Get the average lift total of all lifters
+  # calculate average from lift total class
+
+  def average_lift_total
+    average = @@all.map { |a, b| b }
+      b.average
+  end
+
+#   - Get the total cost of a specific lifter's gym memberships
+  # get total through membership
+  def memberships_total_cost
+    memberships.map { |membership| membership.cost }.sum
+  end
+
+#   - Given a gym and a membership cost, sign a specific lifter up for a new gym
+
 end
