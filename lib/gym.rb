@@ -1,3 +1,8 @@
+require 'pry'
+require_relative '../lib/gym'
+require_relative '../lib/lifter'
+require_relative '../lib/membership'
+
 class Gym
   attr_reader :name
 
@@ -31,10 +36,10 @@ class Gym
   end
 
 #   - Get a list of the names of all lifters that have a membership to that gym
-  # get through membership join metho 
+  # get through membership join method 
 
   def names
-    memberships.map { |lifter| lifter.name }
+    lifters.map { |lifter| lifter.name }
     # Membership.all.select { |gym| gym.lifter == self }
   end
 
@@ -42,7 +47,7 @@ class Gym
   # get through membership join method
 
   def lift_total_sum
-    memberships.map { |membership| membership.lift_total }.sum
+    lifters.map { |lifter| lifter.lift_total }.sum
   end
 
 end
