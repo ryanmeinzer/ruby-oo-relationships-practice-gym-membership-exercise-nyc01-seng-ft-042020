@@ -25,7 +25,7 @@ class Gym
 #   - Get a list of all the lifters that have a membership to a specific gym
   # get through membership join method
 
-  def gyms
+  def lifters
     memberships.map { |membership| membership.lifter }
     # Lifter.all.select { |gym| gym.lifter == self }
   end
@@ -33,8 +33,8 @@ class Gym
 #   - Get a list of the names of all lifters that have a membership to that gym
   # get through membership join metho 
 
-  def gyms
-    memberships.map { |membership| membership.name }
+  def names
+    memberships.map { |lifter| lifter.name }
     # Membership.all.select { |gym| gym.lifter == self }
   end
 

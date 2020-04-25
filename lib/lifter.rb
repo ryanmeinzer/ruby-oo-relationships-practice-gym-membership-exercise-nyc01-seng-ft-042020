@@ -1,10 +1,12 @@
 require 'pry'
+require_relative 'gym'
+require_relative 'membership'
+require_relative '../tools/console'
 
 class Lifter
   attr_reader :name, :lift_total
 
   @@all = []
-
   def initialize(name, lift_total)
     @name = name
     @lift_total = lift_total
@@ -33,13 +35,12 @@ class Lifter
     # Gym.all.select { |gym| gym.lifter == self }
   end
 
-  binding.pry
 #   - Get the average lift total of all lifters
   # calculate average from lift total class
 
-  def average_lift_total
-    average = @@all.map { |a, b| b }
-      b.average
+  def self.average_lift_total
+    average = @@all.map { |lifter| }
+      lifter.lift_total.average
   end
 
 #   - Get the total cost of a specific lifter's gym memberships
@@ -52,6 +53,5 @@ class Lifter
   def sign_up(gym, cost)
     Membership.new(cost, self, gym)
   end
-
 
 end
