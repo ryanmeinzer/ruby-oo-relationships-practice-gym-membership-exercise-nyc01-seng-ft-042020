@@ -49,7 +49,7 @@ class Gym
   def lift_total_sum
     lifters.map { |lifter| lifter.lift_total }.sum
     total = 0
-    memberships.each { |gym| total += gym.lifter.lift_total } total
+    # memberships.each { |gym| total += gym.lifter.l ift_total } total
   end
 
 end
