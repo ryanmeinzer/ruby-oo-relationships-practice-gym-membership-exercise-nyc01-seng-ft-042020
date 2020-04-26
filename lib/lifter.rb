@@ -1,7 +1,7 @@
 require 'pry'
-require_relative '../lib/gym'
-require_relative '../lib/lifter'
-require_relative '../lib/membership'
+# require_relative '../lib/gym'
+# require_relative '../lib/lifter'
+# require_relative '../lib/membership'
 
 class Lifter
   attr_reader :name, :lift_total
@@ -38,7 +38,7 @@ class Lifter
 #   - Get the average lift total of all lifters
   # calculate average from lift total class
 
-  def self.average_lift_total
+  def average_lift_total
     total = @@all.map { |lifter| lifter.lift_total }
     total.sum / total.length
   end

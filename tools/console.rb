@@ -22,6 +22,7 @@ lifter3 = Lifter.new("James", 150)
 membership1 = Membership.new(70, lifter2, gym3)
 membership2 = Membership.new(30, lifter3, gym2)
 membership3 = Membership.new(120, lifter1, gym1)
+# membership3 = Membership.new(120, Lifter.new("Mike", 120), gym1)
 
 binding.pry
 

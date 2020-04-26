@@ -1,7 +1,7 @@
 require 'pry'
-require_relative '../lib/gym'
-require_relative '../lib/lifter'
-require_relative '../lib/membership'
+# require_relative '../lib/gym'
+# require_relative '../lib/lifter'
+# require_relative '../lib/membership'
 
 class Gym
   attr_reader :name
@@ -48,6 +48,8 @@ class Gym
 
   def lift_total_sum
     lifters.map { |lifter| lifter.lift_total }.sum
+    total = 0
+    memberships.each { |gym| total += gym.lifter.lift_total } total
   end
 
 end
